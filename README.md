@@ -50,6 +50,31 @@ A data structure that keeps track of
 - action, 
 - path cost. 
 
+A frontier - a collection of nodes that are waiting to be expanded. 
+Start with a frontier that contains the initial state. 
+Repeat:
+- If the frontier is empty, then no solution. 
+- Remove the node from the frontier. 
+- If the node contains a goal state, then return the solution. 
+- Else, expand the node, add the resulting nodes to the frontier.
+
+Start from the frontier, and expand the nodes until we find a goal state or the frontier is empty (no solution).
+
+## Find a path from A to E 
+![searchprob](./searchprob.png)
+Frontier: [A]
+
+### Approach:
+Remove the node A from the frontier. 
+Check if A is a goal state. 
+Expand A, add resulting nodes to the frontier. 
+
+### Revised approach:
+Remove a node from the frontier. 
+Check if A is a goal state. 
+Add A to the explored set. 
+Expand A, add resulting nodes to the frontier, if not already in the frontier or explored set. 
+
 ## Search algorithms
 
 ### Breadth-first search
