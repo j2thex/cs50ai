@@ -75,6 +75,9 @@ Check if A is a goal state.
 Add A to the explored set. 
 Expand A, add resulting nodes to the frontier, if not already in the frontier or explored set. 
 
+howdy
+
+
 ## Search algorithms
 
 ### Breadth-first search
