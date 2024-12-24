@@ -75,9 +75,17 @@ Check if A is a goal state.
 Add A to the explored set. 
 Expand A, add resulting nodes to the frontier, if not already in the frontier or explored set. 
 
-howdy
 
 
-## Search algorithms
 
-### Breadth-first search
+
+
+
+## Search algorithms (Order of things in the frontier)
+
+## depth first search (Stack, last in first out) 
+
+Arbitrarily picks a path and goes until hits dead-end , goes back to the last fork, and explores
+
+### Breadth-first search (queue, first in first out)
+explores nodes 1 square away, then 2 squares away, then 3
