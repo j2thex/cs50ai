@@ -89,3 +89,50 @@ Arbitrarily picks a path and goes until hits dead-end , goes back to the last fo
 
 ### Breadth-first search (queue, first in first out)
 explores nodes 1 square away, then 2 squares away, then 3
+
+### Uniformed search algorithms
+they don't use any information about the problem, except for the definition of the problem itself. 
+
+### Informed search algorithms
+they use additional information about the problem to guide the search. 
+
+### Greedy best-first search
+Expands the node that is closest to the goal, using a heuristic function h(n) to estimate the distance to the goal.
+
+Manhattan distance is the sum of the absolute differences of the coordinates. (horizontal and vertical distance only)
+
+### A* search
+Expands the node that minimizes the estimated total path cost (cost to reach the node g(n) + estimated cost to goal h(n))
+
+Optimal if 
+1) h(n) is admissible (never overestimates the actual cost to reach the goal)
+2) h(n) is consistent (for every node n and successor n' with step cost c, h(n) ≤ h(n') + c)
+
+## Adversarial search
+When the agent and the environment are adversarial, the agent needs to consider the actions of the environment as well as its own actions. 
+
+### Minimax search
+Maximizes the agent's score while minimizing the opponent's score. 
+
+- S0: initial state
+- PLAYER(s) : returns which player to move in state s
+- ACTIONS(s) : returns legal moves in state s
+- RESULT(s, a) : returns state after action a taken in state s
+- TERMINAL(s) : checks if state s is a terminal state
+- UTILITY(s) : final numerical value for terminal state s
+
+Green arrow up tries to maximize the utility function. 
+Red arrow down tries to minimize the utility function. 
+
+![minimax](./minimax.png)
+
+Given a state s:
+- MAX picks action a in Actions(s) that produces
+highest value of MIN-VALUE(RESULT(s, a))
+- MIN picks action a in Actions(s) that produces
+smallest value of MAX-VALUE(RESULT(s, a))
+
+Depth-limited search - limits the depth of the search. 
+
+Evaluation function - evaluates the expected utility of the game from a given state.
+
